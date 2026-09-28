@@ -1,29 +1,155 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>PrivacyShield</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>🛡️ PrivacyShield</h1>
+    <!-- Navigation -->
+    <header class="navbar">
 
-    <h2>Protect Your Personal Data</h2>
+        <div class="logo">
+            <span class="logo-icon">🛡️</span>
+            <span>PrivacyShield</span>
+        </div>
 
-    <p>Enter your text below:</p>
+        <div class="protection-status">
+            <span class="status-dot"></span>
+            Protection ON
+        </div>
 
-    <textarea rows="8" cols="50"
-        placeholder="Enter your text here..."></textarea>
+    </header>
 
-    <br><br>
 
-    <button>Protect My Data</button>
+    <!-- Main Section -->
+    <main class="container">
 
-    <h2>Protected Output</h2>
+        <!-- Hero Section -->
+        <section class="hero">
 
-    <div>
-        Your protected text will appear here.
-    </div>
+            <div class="shield-circle">
+                🛡️
+            </div>
+
+            <h1>Your Data. <span>Your Control.</span></h1>
+
+            <p>
+                Protect sensitive information before sharing it
+                with websites and online services.
+            </p>
+
+        </section>
+
+
+        <!-- Privacy Protection Box -->
+        <section class="privacy-box">
+
+            <!-- Input -->
+            <div class="text-section">
+
+                <div class="section-heading">
+                    <h2>Your Text</h2>
+                    <span class="small-label">INPUT</span>
+                </div>
+
+                <textarea id="inputText"
+                    placeholder="Enter text containing personal information..."></textarea>
+
+                <div class="example-text">
+                    Example: My email is monika@example.com
+                </div>
+
+            </div>
+
+
+            <!-- Arrow -->
+            <div class="arrow">
+                →
+            </div>
+
+
+            <!-- Output -->
+            <div class="text-section">
+
+                <div class="section-heading">
+                    <h2>Protected Text</h2>
+                    <span class="small-label protected">PROTECTED</span>
+                </div>
+
+                <div id="outputText" class="output-box">
+                    Your protected text will appear here.
+                </div>
+
+                <div class="example-text">
+                    Your sensitive information stays protected.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Button -->
+        <div class="button-area">
+
+            <button id="protectButton">
+                🛡️ Protect My Data
+            </button>
+
+        </div>
+
+
+        <!-- Protection Info -->
+        <section class="protection-info">
+
+            <div class="info-card">
+                <div class="info-icon">✉️</div>
+                <div>
+                    <strong>Email</strong>
+                    <p>Protected</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">📱</div>
+                <div>
+                    <strong>Phone</strong>
+                    <p>Protected</p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">👤</div>
+                <div>
+                    <strong>Personal Data</strong>
+                    <p>Protected</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Footer Note -->
+        <div class="privacy-note">
+            🔒 Privacy first — your data stays under your control.
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>PrivacyShield • Privacy Protection Demo</p>
+    </footer>
+    
+    <script src="script.js"></script>
 
 </body>
 </html>
+```
