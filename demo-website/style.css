@@ -1,4 +1,3 @@
-css
 * {
     margin: 0;
     padding: 0;
@@ -10,13 +9,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 
     min-height: 100vh;
+    overflow-x: hidden;
 
     background:
-        radial-gradient(circle at top left, #dbeafe, transparent 35%),
-        radial-gradient(circle at bottom right, #e0e7ff, transparent 35%),
-        #f8fafc;
+        radial-gradient(circle at top left, #dce5f2, transparent 35%),
+        radial-gradient(circle at bottom right, #e3e5f3, transparent 35%),
+        #eef2f7;
 
-    color: #172033;
+    color: #1e293b;
 }
 
 
@@ -26,6 +26,8 @@ body {
 
 .navbar {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 
     display: flex;
     justify-content: space-between;
@@ -33,9 +35,9 @@ body {
 
     padding: 20px 7%;
 
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(248, 250, 252, 0.92);
 
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #d8dee9;
 
     backdrop-filter: blur(10px);
 }
@@ -49,6 +51,8 @@ body {
 
     font-size: 22px;
     font-weight: 700;
+
+    color: #1e293b;
 }
 
 
@@ -56,6 +60,10 @@ body {
     font-size: 28px;
 }
 
+
+/* =========================
+   PROTECTION STATUS
+========================= */
 
 .protection-status {
     display: flex;
@@ -67,9 +75,9 @@ body {
 
     border-radius: 20px;
 
-    background: #ecfdf5;
+    background: #e3f2eb;
 
-    color: #047857;
+    color: #28745a;
 
     font-size: 14px;
     font-weight: 600;
@@ -82,7 +90,7 @@ body {
 
     border-radius: 50%;
 
-    background: #10b981;
+    background: #4f9d7a;
 }
 
 
@@ -124,11 +132,11 @@ body {
 
     border-radius: 50%;
 
-    background: #e0e7ff;
+    background: #e2e7f3;
 
     font-size: 36px;
 
-    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+    box-shadow: 0 10px 30px rgba(70, 85, 143, 0.12);
 }
 
 
@@ -136,11 +144,13 @@ body {
     font-size: 42px;
 
     margin-bottom: 15px;
+
+    color: #1e293b;
 }
 
 
 .hero h1 span {
-    color: #4f46e5;
+    color: #46558f;
 }
 
 
@@ -164,7 +174,7 @@ body {
 .privacy-box {
     display: grid;
 
-    grid-template-columns: 1fr 60px 1fr;
+    grid-template-columns: minmax(0, 1fr) 60px minmax(0, 1fr);
 
     align-items: center;
 
@@ -172,13 +182,13 @@ body {
 
     padding: 28px;
 
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.94);
 
-    border: 1px solid #e2e8f0;
+    border: 1px solid #d8dee9;
 
     border-radius: 22px;
 
-    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    box-shadow: 0 20px 50px rgba(30, 41, 59, 0.07);
 }
 
 
@@ -198,6 +208,8 @@ body {
 
 .section-heading h2 {
     font-size: 18px;
+
+    color: #1e293b;
 }
 
 
@@ -206,7 +218,7 @@ body {
 
     border-radius: 6px;
 
-    background: #f1f5f9;
+    background: #edf0f5;
 
     color: #64748b;
 
@@ -216,14 +228,17 @@ body {
 
 
 .small-label.protected {
-    background: #ecfdf5;
-    color: #047857;
+    background: #e3f2eb;
+
+    color: #28745a;
 }
 
 
 textarea,
 .output-box {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 
     min-height: 190px;
 
@@ -231,9 +246,9 @@ textarea,
 
     border-radius: 14px;
 
-    border: 1px solid #dbe3ee;
+    border: 1px solid #d5dce7;
 
-    background: #f8fafc;
+    background: #f5f7fa;
 
     font-family: inherit;
 
@@ -249,13 +264,15 @@ textarea {
     resize: vertical;
 
     outline: none;
+
+    color: #1e293b;
 }
 
 
 textarea:focus {
-    border-color: #818cf8;
+    border-color: #7180b0;
 
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+    box-shadow: 0 0 0 3px rgba(70, 85, 143, 0.10);
 }
 
 
@@ -263,6 +280,10 @@ textarea:focus {
     color: #64748b;
 }
 
+
+/* =========================
+   ARROW
+========================= */
 
 .arrow {
     width: 45px;
@@ -276,19 +297,23 @@ textarea:focus {
 
     border-radius: 50%;
 
-    background: #eef2ff;
+    background: #e8ebf5;
 
-    color: #4f46e5;
+    color: #46558f;
 
     font-size: 24px;
     font-weight: bold;
 }
 
 
+/* =========================
+   EXAMPLE TEXT
+========================= */
+
 .example-text {
     margin-top: 10px;
 
-    color: #94a3b8;
+    color: #8994a5;
 
     font-size: 12px;
 }
@@ -312,7 +337,7 @@ button {
 
     border-radius: 12px;
 
-    background: #4f46e5;
+    background: #46558f;
 
     color: white;
 
@@ -321,7 +346,7 @@ button {
 
     cursor: pointer;
 
-    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 10px 25px rgba(70, 85, 143, 0.20);
 
     transition: 0.2s;
 }
@@ -330,7 +355,44 @@ button {
 button:hover {
     transform: translateY(-2px);
 
-    box-shadow: 0 14px 30px rgba(79, 70, 229, 0.3);
+    background: #3f4d82;
+
+    box-shadow: 0 14px 30px rgba(70, 85, 143, 0.23);
+}
+
+
+/* =========================
+   VOICE BUTTON
+========================= */
+
+#voiceButton {
+    margin-top: 10px;
+
+    padding: 9px 16px;
+
+    background: #e8ebf5;
+
+    color: #46558f;
+
+    border: 1px solid #d5dce7;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow: none;
+}
+
+
+#voiceButton:hover {
+    background: #dde3f1;
+
+    color: #3f4d82;
+
+    transform: none;
+
+    box-shadow: none;
 }
 
 
@@ -355,11 +417,13 @@ button:hover {
 
     padding: 18px;
 
-    background: white;
+    background: #ffffff;
 
-    border: 1px solid #e2e8f0;
+    border: 1px solid #d8dee9;
 
     border-radius: 15px;
+
+    box-shadow: 0 5px 18px rgba(30, 41, 59, 0.04);
 }
 
 
@@ -373,7 +437,7 @@ button:hover {
 
     border-radius: 10px;
 
-    background: #eef2ff;
+    background: #e8ebf5;
 
     font-size: 20px;
 }
@@ -381,13 +445,15 @@ button:hover {
 
 .info-card strong {
     font-size: 14px;
+
+    color: #1e293b;
 }
 
 
 .info-card p {
     margin-top: 4px;
 
-    color: #10b981;
+    color: #4f9d7a;
 
     font-size: 12px;
 }
@@ -417,7 +483,7 @@ footer {
 
     padding: 25px;
 
-    color: #94a3b8;
+    color: #8994a5;
 
     font-size: 12px;
 }
@@ -479,4 +545,3 @@ footer {
     }
 
 }
-

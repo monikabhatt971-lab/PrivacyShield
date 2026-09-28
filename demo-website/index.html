@@ -1,6 +1,6 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,8 +59,15 @@
                     <span class="small-label">INPUT</span>
                 </div>
 
-                <textarea id="inputText"
-                    placeholder="Enter text containing personal information..."></textarea>
+                <textarea
+                    id="inputText"
+                    placeholder="Enter text containing personal information..."
+                ></textarea>
+
+                <!-- Voice Input Button -->
+                <button id="voiceButton" type="button">
+                    🎤 Speak
+                </button>
 
                 <div class="example-text">
                     Example: My email is monika@example.com
@@ -80,7 +87,10 @@
 
                 <div class="section-heading">
                     <h2>Protected Text</h2>
-                    <span class="small-label protected">PROTECTED</span>
+
+                    <span class="small-label protected">
+                        PROTECTED
+                    </span>
                 </div>
 
                 <div id="outputText" class="output-box">
@@ -96,7 +106,7 @@
         </section>
 
 
-        <!-- Button -->
+        <!-- Protect Button -->
         <div class="button-area">
 
             <button id="protectButton">
@@ -109,34 +119,54 @@
         <!-- Protection Info -->
         <section class="protection-info">
 
+            <!-- Email -->
             <div class="info-card">
-                <div class="info-icon">✉️</div>
+
+                <div class="info-icon">
+                    ✉️
+                </div>
+
                 <div>
                     <strong>Email</strong>
                     <p>Protected</p>
                 </div>
+
             </div>
 
+
+            <!-- Phone -->
             <div class="info-card">
-                <div class="info-icon">📱</div>
+
+                <div class="info-icon">
+                    📱
+                </div>
+
                 <div>
                     <strong>Phone</strong>
                     <p>Protected</p>
                 </div>
+
             </div>
 
+
+            <!-- Personal Data -->
             <div class="info-card">
-                <div class="info-icon">👤</div>
+
+                <div class="info-icon">
+                    👤
+                </div>
+
                 <div>
                     <strong>Personal Data</strong>
                     <p>Protected</p>
                 </div>
+
             </div>
 
         </section>
 
 
-        <!-- Footer Note -->
+        <!-- Privacy Note -->
         <div class="privacy-note">
             🔒 Privacy first — your data stays under your control.
         </div>
@@ -144,13 +174,15 @@
     </main>
 
 
+    <!-- Footer -->
     <footer>
         <p>PrivacyShield • Privacy Protection Demo</p>
     </footer>
-    
+
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
-</html>
-```
 
+</html>

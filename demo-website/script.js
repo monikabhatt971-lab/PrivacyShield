@@ -1,6 +1,12 @@
 const inputText = document.getElementById("inputText");
 const outputText = document.getElementById("outputText");
 const protectButton = document.getElementById("protectButton");
+const voiceButton = document.getElementById("voiceButton");
+
+
+// =========================
+// PROTECT DATA
+// =========================
 
 protectButton.addEventListener("click", function () {
 
@@ -18,13 +24,19 @@ protectButton.addEventListener("click", function () {
     let emailCount = 0;
     let phoneCount = 0;
 
-    // Email detection and masking
+
+    // =========================
+    // EMAIL DETECTION
+    // =========================
+
     text = text.replace(
         /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g,
         function (email) {
 
             if (!emailMap[email]) {
+
                 emailCount++;
+
                 emailMap[email] =
                     `[EMAIL_${String(emailCount).padStart(2, "0")}]`;
             }
@@ -33,13 +45,19 @@ protectButton.addEventListener("click", function () {
         }
     );
 
-    // Phone detection and masking
+
+    // =========================
+    // PHONE DETECTION
+    // =========================
+
     text = text.replace(
         /\b\d{10}\b/g,
         function (phone) {
 
             if (!phoneMap[phone]) {
+
                 phoneCount++;
+
                 phoneMap[phone] =
                     `[PHONE_${String(phoneCount).padStart(2, "0")}]`;
             }
@@ -48,13 +66,79 @@ protectButton.addEventListener("click", function () {
         }
     );
 
+
+    // Show protected text
     outputText.textContent = text;
 
-    inputText.addEventListener("input", function () {
+});
+
+
+// =========================
+// CLEAR OUTPUT WHEN INPUT IS EMPTY
+// =========================
+
+inputText.addEventListener("input", function () {
 
     if (inputText.value.trim() === "") {
         outputText.textContent = "";
-    }});
-
+    }
 
 });
+
+
+// =========================
+// VOICE TO TEXT
+// =========================
+
+const SpeechRecognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition;
+
+
+if (SpeechRecognition) {
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "en-IN";
+
+    recognition.continuous = true;
+
+    recognition.interimResults = false;
+
+
+    // Start listening
+    voiceButton.addEventListener("click", function () {
+
+        recognition.start();
+
+        voiceButton.textContent = "🔴 Listening...";
+    });
+
+
+    // Convert speech to text
+    recognition.addEventListener("result", function (event) {
+
+        const transcript =
+            event.results[event.results.length - 1][0].transcript;
+
+        inputText.value +=
+            (inputText.value ? " " : "") + transcript;
+
+    });
+
+
+    // Stop listening
+    recognition.addEventListener("end", function () {
+
+        voiceButton.textContent = "🎤 Speak";
+
+    });
+
+
+} else {
+
+    // Browser does not support speech recognition
+    voiceButton.disabled = true;
+
+    voiceButton.textContent = "Voice not supported";
+
+}
